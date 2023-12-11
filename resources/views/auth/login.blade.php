@@ -3,7 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | Dashboard</title>
+  <title>CSU Library</title>
+  <link rel="icon" type="image/x-icon" href="assets/CSU.png" />
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -25,20 +26,30 @@
   <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
   <!-- summernote -->
   <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
+  <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+   <link href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&amp;display=swap" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+ <link href="css/styles.css" rel="stylesheet" />
   
 </head>
 <body>
-<div class="wrapper d-flex justify-content-center align-items-center">
+<div class="wrapper ">
 
    <!-- Main content -->
    <section class="content">
-      <div class="container">
-        <div class="row">
+      <div class="container-fluid">
+      <img class="bg-image" src="assets/img/CSU lib1.jpg" alt="background image">
+        <div style="z-index:2;position:relative">
+        <div class="row" >
           <!-- left column -->
-          <div class="col-md-12">
+          <div class="col-12 d-flex justify-content-center align-items-center" style="min-height: 100vh;">
             <!-- jquery validation -->
-            <div class="card card-primary">
+            <div class="card card-success "  style="width: 500px;">
               <div class="card-header">
+                <h5 class="text-center">LOGIN</h5>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
@@ -66,15 +77,14 @@
                     <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                   </div>
                   <div class="form-group mb-0">
-                    <div class="custom-control custom-checkbox">
-                      <input type="checkbox" name="terms" class="custom-control-input" id="exampleCheck1">
-                      <label class="custom-control-label" for="exampleCheck1">I agree to the <a href="#">terms of service</a>.</label>
-                    </div>
+                    
+                      <span  for="exampleCheck1">don't have account ? <a href="{{ route('register') }}">register</a></span>
+                    
                   </div>
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="submit" class="btn btn-primary">LOGIN</button>
                 </div>
               </form>
             </div>
@@ -82,11 +92,9 @@
             </div>
           <!--/.col (left) -->
           <!-- right column -->
-          <div class="col-md-6">
-
-          </div>
-          <!--/.col (right) -->
         </div>
+          <!--/.col (right) -->
+          </div>
         <!-- /.row -->
       </div><!-- /.container-fluid -->
     </section>

@@ -3,7 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | Dashboard</title>
+  <title>CSU Library</title>
+  <link rel="icon" type="image/x-icon" href="assets/CSU.png" />
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -26,20 +27,32 @@
   <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
   <!-- summernote -->
   <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+   <link href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&amp;display=swap" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+ <link href="css/styles.css" rel="stylesheet" />
   
 </head>
 <body>
-  <div class=" mt-5">
+  <div class="wrapper">
+ 
+  <section class="content">
+  <div class="container-fluid">
+  <img class="bg-image" src="assets/img/CSU lib2.jpg" alt="background image">
+    <div style="z-index:2;position:relative">
+  
     <div class="row">
+
+    
+    <div class="col-12 d-flex justify-content-center align-items-center" style="min-height: 100vh;">
         
             <!-- Your content goes here -->
-            <div class="col-7 d-flex justify-content-center flex-column align-items-center">
-            <h1>Hello, Bootstrap!</h1>
-            <p>This div is centered using Bootstrap 5 utility classes.</p>
-            </div>
-            
-
-            <div class="col-5 d-flex justify-content-center align-items-center"> 
+            <div class="card card-success "  style="width: 500px;">
+              <div class="card-header">
+                <h5 class="text-center">REGISTER</h5>
+              </div>
+          
             <form method="POST" class="shadow" action="{{ route('register.save') }}" id="quickForm">
                 @csrf
                 <div class="card-body">
@@ -75,20 +88,22 @@
                 </div>
 
                   <div class="form-group mb-0">
-                    <div class="custom-control custom-checkbox">
-                      <input type="checkbox" name="terms" class="custom-control-input" id="exampleCheck1">
-                      <label class="custom-control-label" for="exampleCheck1">I agree to the <a href="#">terms of service</a>.</label>
-                    </div>
+                    
+                      <span >Already have account <a href="{{ route('login') }}">Login</a>.</span>
+                   
                   </div>
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="submit" class="btn btn-primary">REGISTER</button>
                 </div>
               </form>
-              </div>
+            </div>
+          </div>
+    </div>
         </div>
-        </div>
+      </div>
+    </section>
 </div>
 
    
