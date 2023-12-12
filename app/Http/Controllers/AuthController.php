@@ -40,7 +40,7 @@ class AuthController extends Controller
             'role' => 'user'
         ]);
 
-    return redirect()->route('login');
+    return redirect()->route('usermanagement');
         
     }
 
@@ -72,5 +72,38 @@ class AuthController extends Controller
             $request->session()->invalidate();
             
             return redirect('/');
+    }
+
+    public function deleteUser($id){
+        $user = User::findOrFail($id);
+
+        // Check if the book exists
+        if($user){
+            $user->delete();
+            // Redirect to a page or return a response
+            return redirect()->route('usermanagement');
+            // Redirect to a page or return a response for non-existing book
+        }
+    }
+
+    public function userupdate(Request $request){
+        $id = $request->input('id');
+
+        $data =  User::find($id);
+
+        return view('user-update',compact('data') );
+    }
+
+    public function  userupdateSave(Request $request){
+        $user = User::find($request->id);
+        $data = [
+            'idnumber' => $request->update_idnumber,
+            'name' => $request->update_name,
+            'email' => $request->update_email,
+        ];
+
+        $user->update($data);
+
+        return redirect()->route('usermanagement');
     }
 }

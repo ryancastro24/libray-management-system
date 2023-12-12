@@ -99,6 +99,15 @@
               </p>
             </a>
           </li>
+
+          <li >
+            <a href="/usermanagement" class="nav-link ">
+            <i class="nav-icon fas fa-user"></i>
+              <p class="ml-2">
+              User Management
+              </p>
+            </a>
+          </li>
              
 
               @else

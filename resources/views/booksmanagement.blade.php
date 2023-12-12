@@ -94,7 +94,7 @@
                             <td>{{$val->year_published}}</td>
                             <td>{{$val->category}}</td>
                             <td class="d-flex justify-content-center">
-                                <button class="btn btn-primary mr-3">Update</button>
+                                <a href="{{ route('books.update', ['id' => $val->id])  }}"><button class="btn btn-primary mr-3">Update</button></a>
                                <a href="{{ route('books.delete', $val->id) }}"><button class="btn btn-danger">Delete</button></a> 
                             </td>
                             
@@ -105,6 +105,9 @@
               </div>
               <!-- /.card-body -->
             </div>
+
+
+
             <!-- /.card -->
           </div>
           <!-- /.col -->
@@ -113,6 +116,8 @@
       </div>
         </div>
     </div>
+
+
 
 
 @endsection

@@ -35,7 +35,7 @@
                     
                     <div>
                         <a href="{{ route('login') }}"><button class="btn btn-primary px-5 py-2">Login</button></a>
-                        <a href="{{ route('register') }}"><button class="btn btn-success px-5 py-2 m-2">Register</button></a>
+                        
                     </div>
                  
                 </div>

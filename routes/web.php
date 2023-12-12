@@ -6,6 +6,7 @@ use App\Http\Controllers\BorrowedBooksController;
 use App\Models\Book;
 use App\Models\BorrowedBook;
 use App\Models\ReturnedBook;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -25,8 +26,6 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('guest')->group(function () {
  
         Route::controller(AuthController::class)->group(function() {
-            Route::get('register', 'register')->name('register');
-            Route::post('register', 'registerSave')->name('register.save');
             Route::get('login', 'login')->name('login');
             Route::post('login', 'loginAction')->name('login.action');
             Route::get('/', function () {
@@ -190,18 +189,36 @@ Route::middleware('auth')->group(function() {
 
 
 
+    //usermanagement
+    Route::get('usermanagement', function(){
+        $data = User::all();
+        return view('usermanagement',compact('data'));
+    })->name('usermanagement');
+
+    // add user
+    Route::controller(AuthController::class)->group(function() {
+        Route::post('register', 'registerSave')->name('register.save');
+        Route::get('register/{id}', 'deleteUser')->name('user.remove');
+        Route::get('userupdate','userupdate')->name('user.update');
+        Route::post('userupdate','userupdateSave')->name('user.updateSave');
+    });
+
+
     // borrowedbooks GroupController 
     Route::controller(BorrowedBooksController::class)->group(function() {
         Route::post('borrowedbooks', 'borrowedbooksSave')->name('borrowedbooks.save');
         Route::post('borrowedbooksreturn', 'borrowedbooksReturn')->name('borrowedbooks.return');
     });
 
+    
 
     // book management 
     Route::controller(BooksController::class)->group(function() {
         Route::get('booksmanagement', 'books')->name('booksmanagement');
         Route::post('booksmanagement', 'saveBooks')->name('books.save');
         Route::get('booksdelete/{id}', 'delete')->name('books.delete');
+        Route::get('updatebook','updatebook')->name('books.update');
+        Route::post('updatebook','updatebookSave')->name('book.updateSave');
     });
 
 

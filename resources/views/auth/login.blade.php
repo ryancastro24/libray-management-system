@@ -76,11 +76,7 @@
                     <label for="exampleInputPassword1">Password</label>
                     <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                   </div>
-                  <div class="form-group mb-0">
-                    
-                      <span  for="exampleCheck1">don't have account ? <a href="{{ route('register') }}">register</a></span>
-                    
-                  </div>
+                  
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
